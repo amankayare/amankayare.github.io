@@ -35,7 +35,7 @@ a {
 	color: #82A4E1;
 	border: 0;
 	font-size: 17px;
-    margin-left: 12px;
+	border-radius: 34px;
 
 }
 
@@ -146,6 +146,8 @@ td {
 	padding: 5px;
 	height: 40px;
 	flex: 1;
+	border-radius: 20px;
+
 }
 
 /* Join Page */
