@@ -6,7 +6,7 @@ function copy_function(id, btn) {
   var value = document.getElementById(id).innerHTML;
   console.log('name copy function called')
   var input_temp = document.createElement("input");
-  input_temp.value = value;
+  input_temp.value = value.trim();
   document.body.appendChild(input_temp);
   input_temp.select();
   document.execCommand("copy");
