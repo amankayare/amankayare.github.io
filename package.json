@@ -1,0 +1,14 @@
+{
+  "name": "chat-room",
+  "version": "1.0.0",
+  "description": "Just for fun i have created this chat-room",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aman Kayare",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

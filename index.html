@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Club App</title>
+    <link rel="icon" href="image/logo.png" type="image/icon type">
+
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+
+    <link rel='stylesheet' type='text/css' media='screen' href='css/flex.css'>
+</head>
+
+<body>
+    <aside class="left-aside" id="left-modal">
+
+        <h2>How it work's</h2>
+        <div class="custom-scrollbar instruction">
+            <ol>
+                <li>The first thing you’ll need to do is create a Facebook app since an app Id is required to implement
+                    login using Facebook. You can create a facebook app by going to https://developers.facebook.com.
+                    You’ll
+                    notice in the codepen nothing is displayed since I have not added a app Id. You’ll need to remember
+                    to
+                    replace this placeholder with your own Facebook app Id once you have created your Facebook app.</li>
+                <li>Next, we’ll implement login using Facebook. All we need to do is copy and paste the code provided to
+                    us
+                    by Facebook to create the Facebook social login and replace the placeholder with your own Facebook
+                    app
+                    id. I will be explaining the same code with my customization provided in the codepen below.</li>
+                <li>Log In and look at the console output. You’ll now see some basic info including id, email,
+                    first_name,
+                    gender, last_name, link, locale, name, timezone, updated_time, verified</li>
+                <li>Now if you save this page as index.html and open it in a browser you should see the Facebook Login
+                    button. You can use the code provided by facebook at the link listed above or you can used the
+                    codepen
+                    code that I have altered to make it a bit shorter for explanation.</li>
+                <li>As you can see, the above function receives a response variable and checks it's status. If it is
+                    connected it fetches the logged in users info and outputs this information in the console of your
+                    browser, that area is where you could build more onto this script to handle the data. You'll also
+                    notice
+                    the not_authorized status. When the login is not authorized, this function changed the html on your
+                    page
+                    to ask you to log in. But how does this function get used?</li>
+                <li>Next, you'll notice this section of code at the end of the JavaScript section. This code snippet
+                    loads
+                    the Facebook SDK JavaScript asynchronously. It also provides the JavaScript library which is used to
+                    render your Facebook login interface.</li>
+                <li>As you can see, the above function receives a response variable and checks it's status. If it is
+                    connected it fetches the logged in users info and outputs this information in the console of your
+                    browser, that area is where you could build more onto this script to handle the data.</li>
+            </ol>
+        </div>
+        </p>
+
+
+    </aside>
+    <main>
+
+        <div class="heading">
+            <!-- <img src="image/logo.png">-->
+            <h1 class="heading-text">Welcome to the Fun club</h1>
+            <!--  <img class="right-img" src="image/logo.png">-->
+
+        </div>
+
+        <div class="card">
+            <div class="login-page">
+                <div class="form">
+                    <form class="login-form">
+                        <input type="text" placeholder="Enter your character name" />
+                        <input type="radio" id="" name="room" value="">
+                        <label for="">General-Room</label><br>
+                        <input type="radio" id="" name="room" value="">
+                        <label for="">Bollywood-Room</label><br>
+                        <input type="radio" id="other" name="room" value="">
+                        <label for="other">Cartoon-Room</label>
+                        <button>Join</button>
+
+                    </form>
+                </div>
+            </div>
+            <button type="button" id="modal-btn-h" onclick="toggleModal()" class="modal-btn-h">How it
+                work's</button>
+            <button type="button" id="modal-btn-s" onclick="toggleModal2()" class="modal-btn-s">search for
+                character..</button>
+
+            <header>
+                &copy; Develop and Design by Aman Kayare
+            </header>
+        </div>
+
+    </main>
+
+    <aside class="right-aside" id="right-modal">
+        <section class="search-area">
+            <input type="text" autocomplete="off" id="myInput" onkeyup="myFunction()"
+                placeholder="Search for character..">
+            <div class="celebrity-available custom-scrollbar">
+
+                <table id="myTable">
+
+                    <tr>
+                        <td><img class="avatar-img" src="image/virat.png   " alt="Avatar"></td>
+                        <td>
+                            <p id="celeb-name-1">Virat Kohli</p>
+                        </td>
+                        <td><button id="btn1" onclick="copy_function('celeb-name-1','btn1')" class="copy-button">Copy
+                                Name</button></td>
+                    </tr>
+                    <tr>
+                        <td><img class="avatar-img" src="image/goku.png   " alt="Avatar"></td>
+                        <td>
+                            <p id="celeb-name-2">AB Devilliar</p>
+                        </td>
+                        <td><button id="btn2" onclick="copy_function('celeb-name-2','btn2')" class="copy-button">Copy
+                                Name</button></td>
+                    </tr>
+                    <tr>
+                        <td><img class="avatar-img" src="image/shikhar.png" alt="Avatar"></td>
+                        <td>
+                            <p id="celeb-name-3">Shikhar Dhawan</p>
+                        </td>
+                        <td><button id="btn3" onclick="copy_function('celeb-name-3','btn3')" class="copy-button">Copy
+                                Name</button></td>
+                    </tr>
+                    <tr>
+                        <td><img class="avatar-img" src="image/alia.png   " alt="Avatar"></td>
+                        <td>
+                            <p id="celeb-name-4">Rohit Sharma</p>
+                        </td>
+                        <td><button id="btn4" onclick="copy_function('celeb-name-4','btn4')" class="copy-button">Copy
+                                Name</button></td>
+                    </tr>
+                    <tr>
+                        <td><img class="avatar-img" src="image/male-avatar.png   " alt="Avatar"></td>
+                        <td>
+                            <p id="celeb-name-5">MS Dhoni</p>
+                        </td>
+                        <td><button id="btn5" onclick="copy_function('celeb-name-5','btn5')" class="copy-button">Copy
+                                Name</button></td>
+                    </tr>
+                    <tr>
+                        <td><img class="avatar-img" src="image/male-avatar.png   " alt="Avatar"></td>
+                        <td>
+                            <p id="celeb-name-6">Suresh Raina</p>
+                        </td>
+                        <td><button id="btn6" onclick="copy_function('celeb-name-6','btn6')" class="copy-button">Copy
+                                Name</button></td>
+                    </tr>
+                    <tr>
+                        <td><img class="avatar-img" src="image/male-avatar.png   " alt="Avatar"></td>
+                        <td>
+                            <p id="celeb-name-7">Irfan Pathan</p>
+                        </td>
+                        <td><button id="btn7" onclick="copy_function('celeb-name-7','btn7')" class="copy-button">Copy
+                                Name</button></td>
+                    </tr>
+                    <tr>
+                        <td><img class="avatar-img" src="image/male-avatar.png   " alt="Avatar"></td>
+
+                        <td id="celeb-name-8">
+                            Virendra Sehwag
+                        </td>
+
+                        <td><button id="btn8" onclick="copy_function('celeb-name-8','btn8')" class="copy-button">Copy
+                                Name</button></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+    </aside>
+    <div class="modal">
+        <div class="modal-content" id="content">
+            <span class="close-button">&times;</span>
+        </div>
+    </div>
+    <div class="modal2">
+        <div class="modal-content2" id="content2">
+            <span class="close-button2">&times;</span>
+        </div>
+    </div>
+</body>
+<script src='view.js'></script>
+
+
+</html>

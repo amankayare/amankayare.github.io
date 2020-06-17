@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="image/logo.png" type="image/icon type">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/chat.css">
+  <title>Chat Room</title>
+</head>
+
+<body>
+  <div class="chat-container">
+    <header class="chat-header">
+      <img src="image/logo.png">
+      <h1>Fun Club</h1>
+      <a href="index.html" class="btn">Leave Room</a>
+    </header>
+    <main class="chat-main">
+      <div class="chat-sidebar custom-scrollbar">
+        <h3><i class="fas fa-comments"></i> Room Name:</h3>
+        <h2 id="room-name">JavaScript</h2>
+        <h3><i class="fas fa-users"></i> Online
+        </h3>
+        <table id="online-table" class="online-table">
+
+          <tr>
+            <td><img class="avatar-img" src="image/virat.png   " alt="Avatar"></td>
+            <td>
+              <p id="celeb-name-1">Virat Kohli</p>
+            </td>
+
+          </tr>
+          <tr>
+            <td><img class="avatar-img" src="image/goku.png   " alt="Avatar"></td>
+            <td>
+              <p id="celeb-name-2">AB Devilliar</p>
+            </td>
+          </tr>
+          <tr>
+            <td><img class="avatar-img" src="image/shikhar.png" alt="Avatar"></td>
+            <td>
+              <p id="celeb-name-3">Shikhar Dhawan</p>
+            </td>
+
+          </tr>
+          <tr>
+            <td><img class="avatar-img" src="image/alia.png   " alt="Avatar"></td>
+            <td>
+              <p id="celeb-name-4">Rohit Sharma</p>
+            </td>
+
+          </tr>
+          <tr>
+            <td><img class="avatar-img" src="image/male-avatar.png   " alt="Avatar"></td>
+            <td>
+              <p id="celeb-name-5">MS Dhoni</p>
+            </td>
+
+          </tr>
+          <tr>
+            <td><img class="avatar-img" src="image/male-avatar.png   " alt="Avatar"></td>
+            <td>
+              <p id="celeb-name-6">Suresh Raina</p>
+            </td>
+
+          </tr>
+          <tr>
+            <td><img class="avatar-img" src="image/male-avatar.png   " alt="Avatar"></td>
+            <td>
+              <p id="celeb-name-7">Irfan Pathan</p>
+            </td>
+            <td>
+          </tr>
+          <tr>
+            <td><img class="avatar-img" src="image/male-avatar.png   " alt="Avatar"></td>
+
+            <td id="celeb-name-8">
+              Virendra Sehwag
+            </td>
+
+
+          </tr>
+        </table>
+
+      </div>
+      <div class="chat-messages custom-scrollbar">
+        <div class="message">
+          <img src="image/logo.png">
+          <p class="meta">Alia Bhatt <span>9:12pm</span></p>
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+            repudiandae.
+          </p>
+        </div>
+        <div class="message">
+          <img src="image/alia.png">
+          <p class="meta">Alia Bhatt <span>9:12pm</span></p>
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+            repudiandae.
+          </p>
+        </div>
+        <div class="message">
+          <img src="image/logo.png">
+          <p class="meta">Admin <span>9:12pm</span></p>
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+            repudiandae.
+          </p>
+        </div>
+        <div class="message">
+          <img src="image/goku.png">
+          <p class="meta">Goku <span>9:12pm</span></p>
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+            repudiandae.
+          </p>
+        </div>
+        <div class="message">
+          <img src="image/virat.png">
+          <p class="meta">Virat Kohle <span>9:12pm</span></p>
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+            repudiandae.
+          </p>
+        </div>
+
+    </main>
+    <div class="chat-form-container">
+      <form id="chat-form">
+        <input id="msg" type="text" placeholder="Enter Message" required autocomplete="off" />
+        <button class="btn"><i class="fas fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>

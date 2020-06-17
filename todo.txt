@@ -1,0 +1,22 @@
+//write css for right aside i.e. search for mobile screen and js part is done only css is left
+
+
+
+.custom-scrollbar::-webkit-scrollbar {
+	width: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+	background: #F2F2F2;
+	border-radius: 0px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+	background: #82A4E1;
+	border-radius: 10px;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-scrollbar {
+	overflow-y: scroll;
+}
