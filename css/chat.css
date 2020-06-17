@@ -97,10 +97,9 @@ td {
 }
 
 .chat-sidebar .online-table {
-	padding: 6px;
 	color: white;
 	font-family: monospace;
-	font-size: 20px;
+	font-size: 12px;
 }
 
 .chat-messages {
