@@ -27,7 +27,7 @@ ul {
 a {
 	margin-left: 265px;
 	text-decoration: none;
-    font-size: 35px;
+	font-size: 35px;
 	color: white;
 	text-decoration: none;
 }
@@ -279,4 +279,17 @@ td {
 		z-index: 99;
 		width: 320px !important;
 	}
+}
+
+@media (min-width:800px) {
+	.closebtn {
+		display: none;
+	}
+	
+}
+@media (min-width:700px) {
+	.closebtn {
+		display: none;
+	}
+	
 }
