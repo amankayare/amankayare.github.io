@@ -1,351 +1,401 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Weather App</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-    <!-- CSS only -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <!-- JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
-    </script>
-    <!-- Jquery first then custom-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <script src='main.js'></script>
+
+  <title>Aman Kayare | Home</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="library/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!--Font awesome cdn-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Custom styles -->
+  <link href="css/portfolio.css" rel="stylesheet">
+
 </head>
-<style>
-    body {
-        height: 100%;
-        background-image: url('back-ground.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    ::-webkit-scrollbar {
-        width: 20px;
-    }
-
-    /* Track */
-    ::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 5px grey;
-        border-radius: 10px;
-    }
-
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-        background: #ffffff;
-        border-radius: 10px;
-    }
-
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-        background: #ffffff;
-        opacity: 30px;
-
-    }
-
-    .container-fluid {
-
-        height: 105vh;
-        width: 100%;
-
-    }
-
-    .header {
-        padding: 2%;
-        height: 12%;
-        color: white;
-
-    }
-
-    #input-box {
-        border: none;
-        outline: none;
-        border-radius: 15em;
-
-    }
-
-    .left {
-        width: 100%;
-        font-family: Montserrat, sans-serif;
-
-    }
-
-    .right {
-        padding: 2%;
-        background: white;
-        border-radius: 15px;
-        opacity: 30%;
-        margin-left: -20px;
-
-
-    }
-
-    .name {
-        color: white;
-        font-weight: 600;
-        font-size: 3rem;
-    }
-
-    #date {
-        color: white;
-        font-size: 30px;
-    }
-
-    #temp {
-        font-size: 60px;
-        color: white;
-    }
-
-    #temp-data {
-        color: white;
-
-    }
-
-    .details {
-        background: violet;
-
-    }
-
-    .upper {
-        width: 100%;
-        height: 20vh;
-    }
-
-    .lower {
-        width: 100%;
-        height: 20vh;
-    }
-
-    .box {
-        width: 100%;
-        color: grey;
-        font-size: 30px;
-        font-weight: bold;
-    }
-
-    #degree {
-        position: absolute;
-        bottom: 128px;
-        font-size: 44px;
-    }
-
-    .item {
-        background-color: #ffffff;
-        width: 120px;
-        margin: 5px;
-        opacity: 30%;
-        height: 125px;
-
-    }
-
-    /* Inline-block */
-    .inline {
-        vertical-align: middle;
-        overflow-x: scroll;
-    }
-
-    .inline-item {
-        display: inline-block;
-        vertical-align: middle;
-        height: 96px;
-        margin-right: -4px;
-    }
-
-
-    /* Flex */
-    .flex {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow: auto;
-    }
-
-    .flex-item {
-        flex: 0 0 auto;
-    }
-
-    .container {
-        margin: 5px;
-        width: 100%;
-        height: 120px;
-        white-space: nowrap;
-        margin-left: 36px;
-        margin-top: 35px;
-        height: 152px;
-
-
-    }
-
-    .for-animation {
-        visibility: hidden;
-        opacity: 0;
-        transition: visibility 0s, opacity 1s linear;
-
-    }
-
-
-
-    @media (max-width: 411px) and(max-width: 600px) {
-        .container-fluid {
-            height: 100%;
-        }
-
-        .container {
-            height: 100%;
-        }
-    }
-
-    @media (max-width: 760px) {
-
-        .container-fluid {
-
-            height: 180vh;
-
-
-        }
-
-        #temp {
-            font-size: 38px;
-
-        }
-
-        .container {
-            margin-left: 0px;
-
-        }
-
-        .right {
-            margin: 20px;
-            margin-top: 26px;
-        }
-
-        #degree {
-            position: absolute;
-            bottom: 138px;
-            font-size: 44px;
-        }
-
-        .box {
-            font-size: 20px;
-
-        }
-    }
-</style>
 
 <body>
+  <!-- login Modal -->
+  <div id="login" class="modal fade" role="dialog">
+    <div class="modal-dialog">
 
-    <div class=" container-fluid ">
-
-        <div class="row header">
-            <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-                <h1>Weather App </h1>
-            </div>
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header modal-head-text-align">
+          <h4 class="modal-title">Account Login</h4>
         </div>
-        <div class="row  in-box justify-content-center p-2">
-            <div class="col-md-12  d-flex justify-content-center align-items-center">
-                <input type="text" placeholder="Enter City" class="col-md-6 col-sm-6 p-3" id="input-box">
+        <div class="modal-body">
+          <div class="wrapper">
+            <form class="form-signin">
+              <input type="text" class="form-control" name="username" placeholder="Email Address" required=""
+                autofocus="" />
+              <input type="password" class="form-control" name="password" placeholder="Password" required="" />
+              <label class="checkbox">
+                Forget<a href="#"> Username/Password?</a><br>
+                Create an account?<a href="#" class="btn  btn-md" data-toggle="modal" data-target="#signup">
+                  Signup</a><br>
+                <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me<br>
 
-            </div>
-
-
-        </div>
-        <div class="for-animation ">
-            <div class="row  mt-5 ">
-                <div class="col-md-6 left">
-                    <div class="city pl-3">
-                        <div class="name">Indore</div><span id="date">20 Aug 2020</span>
-                    </div>
-                    <div class="temperature p-4 d-flex justify-content-center align-items-center">
-                        <div class="flex-1">
-                            <img style="height:200px; " src="cloud.png" alt="">
-                        </div>
-                        <div id="temp-data" class="flex-1  ml-5">
-                            <span id="temp"></span>
-                            <h1 id="weather"></h1>
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="col-md-6  right ">
-
-                    <div class="upper d-flex justify-content-around">
-                        <div class="flex-1 box d-flex flex-column justify-content-center align-items-center ">
-                            <span style="color: red;"></span><span>Temp</span>
-                        </div>
-                        <div class="flex-1 box d-flex flex-column justify-content-center align-items-center ">
-                            <span style="color: red;"></span><span>Temp Max</span>
-                        </div>
-                        <div class="flex-1 box d-flex flex-column justify-content-center align-items-center ">
-                            <span style="color: red;"></span><span>Temp Min</span>
-                        </div>
-                    </div>
-                    <div class="lower d-flex justify-content-around ">
-                        <div class="flex-1 box d-flex flex-column justify-content-center align-items-center ">
-                            <span style="color: red;"></span><span>Feels like</span>
-                        </div>
-                        <div class="flex-1 box d-flex flex-column justify-content-center align-items-center ">
-                            <span style="color: red;"></span><span>Humidity</span>
-                        </div>
-                        <div class="flex-1 box d-flex flex-column justify-content-center align-items-center ">
-                            <span style="color: red;"></span><span>Pressure</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row horizontal-item mt-1">
-
-                <div class="container flex">
-                    <div class="item flex-item d-flex flex-column justify-content-center  p-3"><img src="wind-gust.png"
-                            height="65px" alt=""><span>akljsdnslkajdn</span>
-                    </div>
-                    <div class="item flex-item d-flex flex-column justify-content-center  p-3"><img src="wind.jpg"
-                            height="65px" alt=""><span></span>
-                    </div>
-                    <div class="item flex-item d-flex flex-column justify-content-center  p-3"><img src="raining.png"
-                            height="65px" alt=""><span></span>
-                    </div>
-                    <div class="item flex-item d-flex flex-column justify-content-center  p-3"><img src="thunder.png"
-                            height="65px" alt=""><span></span>
-                    </div>
-                    <div class="item flex-item d-flex flex-column justify-content-center  p-3"><img src="cloudy.png"
-                            height="65px" alt=""> SunRise:<br><span></span>
-                    </div>
-                    <div class="item flex-item d-flex flex-column justify-content-center  p-3"><img src="time-zone.svg"
-                            height="65px" alt="">Time Zone<br><span></span>
-                    </div>
-
-
-                </div>
-            </div>
+              </label>
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+            </form>
+          </div>
 
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- login modal ends-->
+
+  <!--signup modal-->
+  <div id="signup" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header modal-head-text-align">
+          <h4 class="modal-title">Account Signup</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+        </div>
+        <div class="modal-body">
+          <!-- Default form register -->
+          <form class="text-center border border-light p-5" onsubmit="return validation()" action="#!">
+            <div class="form-row mb-4">
+              <div class="col">
+                <!-- First name -->
+                <input type="text" required id="defaultRegisterFormFirstName" class="form-control"
+                  placeholder="First name">
+              </div>
+              <div class="col">
+                <!-- Last name -->
+                <input type="text" required id="defaultRegisterFormLastName" class="form-control"
+                  placeholder="Last name">
+              </div>
+            </div>
+
+            <!-- E-mail -->
+            <input type="email" id ="email" required id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+
+            <!-- Password -->
+            <input type="password" required id="defaultRegisterFormPassword" class="form-control" placeholder="Password"
+              aria-describedby="defaultRegisterFormPasswordHelpBlock">
+            <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+              At least 8 characters and 1 digit
+            </small>
+
+            <!-- Phone number -->
+            <input type="text" required id="phoneNumber" class="form-control"
+              placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+            <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+              Optional - for two step authentication
+            </small>
+            <!--validation-->
+            <span id="message" style="color: red"></span>
+            <span id="done" style="color: green"></span>
+            <!-- Sign up button -->
+            <button class="btn btn-primary my-4 btn-block" type="submit">Sign in</button>
+            <hr>
+            <!-- Terms of service -->
+            <p>By clicking
+              <em>Sign up</em> you agree to our
+              <a href="" target="_blank">terms of service</a>
+
+          </form>
+          <!-- end form register -->
 
 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!--signup modal ends-->
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light fixed-top">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <img src="images/logo.png" height="28" alt="CoolBrand">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="about.html">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="contact.html">Contact</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="blog-home-1.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a type="button" class="btn  btn-md" data-toggle="modal" data-target="#login">login</a>
+          </li>
+          <li class="nav-item">
+            <a type="button" class="btn  btn-md" data-toggle="modal" data-target="#signup">New User ?</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <!-- Slide One - Set the background image for this slide in the line below -->
+        <div class="carousel-item active" style="background-image: url('images/slide1.jpg')">
+          <div class="carousel-caption d-none d-md-block">
+            <h3></h3>
+            <p></p>
+          </div>
+        </div>
+        <!-- Slide Two - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url('images/slide2.jpg')">
+          <div class="carousel-caption d-none d-md-block">
+            <h3></h3>
+            <p></p>
+          </div>
+        </div>
+        <!-- Slide Three - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url('images/slide3.jpg')">
+          <div class="carousel-caption d-none d-md-block">
+            <h3></h3>
+            <p></p>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row ">
+      <h1 class="welcome my-4">
+        Welcome , नमस्ते Hello! Ciao! Bonjour!
+      </h1>
     </div>
 
 
+    <!-- Marketing Icons Section -->
+    <div class="row">
+      <div class="social-list">
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-google"></a>
+        <a href="#" class="fa fa-linkedin"></a>
+        <a href="#" class="fa fa-youtube"></a>
+        <a href="#" class="fa fa-skype"></a>
+        <a href="#" class="fa fa-yahoo"></a>
+        <a href="#" class="fa fa-reddit"></a>
+      </div>
+    </div>
+    <!-- /.row -->
 
+    <!-- Portfolio Section -->
+    <hr>
+    <h2>My Projects</h2>
 
+    <div class="row">
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100 card-border-less">
+          <a href="#"><img class="card-img-top" src="images/800-maple.png" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#">800 Maple</a>
+            </h4>
+            <h5><a class="text-danger" href="https://800maple.com">https://800maple.com</a></h5>
+            <p class="card-text">
+              800 Maple is a fine dining restaurant and bar located in Williamsville, NY. Offer the best in prime
+              steaks, chops and fresh seafood, 800 Maple offers a casual
+            </p>
+            <hr>
+            <a href="#" class="btn btn-primary">Learn More</a>
 
+          </div>
 
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100 card-border-less">
+          <a href="#"><img class="card-img-top" src="images/css-impact.png" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#">CSS Impact</a>
+            </h4>
+            <h5><a class="text-danger" href="http://www.cssimpact.com">http://www.cssimpact.com</a></h5>
 
+            <p class="card-text">CSS offers a full stack of financial technology platforms for originations, credit
+              granting, revenue cycle management, billing, collections, legal and portfolio</p>
+            <hr>
+            <a href="#" class="btn btn-primary">Learn More</a>
 
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100 card-border-less">
+          <a href="#"><img class="card-img-top" src="images/chodos-group.png" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#">The Chodos Group</a>
+            </h4>
+            <h5><a class="text-danger" href="https://www.thechodosgroup.com">https://www.thechodosgroup.com</a></h5>
+
+            <p class="card-text">The Chodos Group provides effective health and nutrition counseling services in
+              Chicago. They came to Mainstreethost seeking help with their branding</p>
+            <hr>
+            <a href="#" class="btn btn-primary">Learn More</a>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100 card-border-less">
+          <a href="#"><img class="card-img-top" src="images/buffalo-pedal-tours.png" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#">Buffalo Pedal Tours</a>
+            </h4>
+            <h5><a class="text-danger" href="https://www.buffalopedaltours.com/">https://www.buffalopedaltours.com/</a>
+            </h5>
+            <p class="card-text">Buffalo Pedal Tours is a premier source for fun group outdoor experiences. Since their
+              start in 2014, they have hosted thousands of tours for your group.</p>
+            <hr>
+            <a href="#" class="btn btn-primary">Learn More</a>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100 card-border-less">
+          <a href="#"><img class="card-img-top" src="images/just-pizza.png" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#">Just Pizza</a>
+            </h4>
+            <h5><a class="text-danger" href="https://www.justpizzausa.com">https://www.justpizzausa.com</a></h5>
+
+            <p class="card-text">Opening in 1992, Just Pizza & Wing Co. is a full-service pizzeria in Western New York.
+              They’ve expanded their franchise to 9 locations </p>
+            <hr>
+            <a href="#" class="btn btn-primary">Learn More</a>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100 card-border-less">
+          <a href="#"><img class="card-img-top" src="images/marshalls-farm.png" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#">Marshall's Farm</a>
+            </h4>
+            <h5><a class="text-danger" href="https://www.marshallshoney.com">https://www.marshallshoney.com</a></h5>
+            <p class="card-text">Marshall’s Honey; the finest in natural organic gourmet honeys from the mountains,
+              valleys, seacoasts and back yards of the San Francisco Bay area
+            </p>
+            <hr>
+            <a href="#" class="btn btn-primary">Learn More</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Features Section -->
+    <div class="row">
+      <div class="col-lg-6">
+        <h2>We Provide Responsive Web Designs</h2>
+        <p>With over 50% of all web traffic coming from a mobile device, creating a mobile-friendly website is no
+          longer
+          an option—it’s a necessity. It all starts with responsive web design.:</p>
+        <ul>
+          <li>
+            <strong>Mobile-friendly</strong>
+          </li>
+          <li>Design for every device</li>
+          <li>Positive UX</li>
+          <li>Helps SEO</li>
+        </ul>
+        <p>Responsive Web design is the approach that suggests that design and development should respond to the user’s
+          behavior and environment based on screen size, platform and orientation.</p>
+      </div>
+      <div class="col-lg-6">
+        <img class="img-fluid rounded" src="images/me.jpg" alt="">
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Call to Action Section -->
+    <div class="row mb-4">
+      <div class="col-md-8">
+        <p>Almost every new client these days wants a mobile version of their website. It’s practically essential after
+          all: one design for the BlackBerry, another for the iPhone, the iPad, netbook, Kindle — and all screen
+          resolutions must be compatible, too. In the next five years, we’ll likely need to design for a number of
+          additional inventions. When will the madness stop? It won’t, of course.</p>
+      </div>
+      <div class="col-md-4">
+        <a class="btn btn-lg btn-secondary btn-block bg-dark" href="#">Call to Action</a>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 footer-bg">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Aman Kayare 2020 CDAC Mumbai!!</p>
+
+      <ul class="text-center">
+        <li><a class=" text-white" href="faq.html">FAQ</a></li>
+        <li><a class=" text-white" href="contact.html">Contact</a></li>
+        <li><a class=" text-white" href="about.html">About</a></li>
+
+      </ul>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="library/jquery/jquery.min.js"></script>
+  <script src="library/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/porfolio.js"></script>
 
 </body>
 
-</html>
